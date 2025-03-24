@@ -3,7 +3,9 @@ import { jwtDecode } from "jwt-decode";
 import api from "../api";
 import { REFRESH_TOKEN, ACCESS_TOKEN } from "../constants";
 import { useState, useEffect } from "react";
-
+// Protects routes by checking authentication.
+// Refreshes expired tokens automatically.
+// Redirects unauthorized users to login
 
 function ProtectedRoute({ children }) {
     const [isAuthorized, setIsAuthorized] = useState(null);

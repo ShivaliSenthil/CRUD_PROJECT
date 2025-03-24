@@ -39,3 +39,4 @@ function App() {
 }
 
 export default App
+//This file sets up React Router to handle navigation in your app, including protected routes, authentication, and redirections.

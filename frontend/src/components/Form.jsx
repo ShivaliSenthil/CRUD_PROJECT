@@ -4,7 +4,10 @@ import { useNavigate } from "react-router-dom";
 import { ACCESS_TOKEN, REFRESH_TOKEN } from "../constants";
 import "../styles/Form.css"
 import LoadingIndicator from "./LoadingIndicator";
-
+//handles user authentication (Login & Registration)
+//Displays a form with username and password input fields.
+//Shows a loading indicator when the request is in progress.
+//Button dynamically displays "Login" or "Register" based on the method prop
 function Form({ route, method }) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
@@ -51,9 +54,11 @@ function Form({ route, method }) {
                 placeholder="Password"
             />
             {loading && <LoadingIndicator />}
+            
             <button className="form-button" type="submit">
                 {name}
             </button>
+            
         </form>
     );
 }
