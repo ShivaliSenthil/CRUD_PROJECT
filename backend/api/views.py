@@ -57,3 +57,15 @@ class LogoutView(APIView):
 
         except Exception as e:
             return Response({"error": str(e)}, status=status.HTTP_400_BAD_REQUEST)
+# added
+@api_view(['PUT'])
+@permission_classes([IsAuthenticated])
+def update_note(request, id):
+    try:
+        note = Note.objects.get(id=id, author=request.user)  # Ensure the note belongs to the user
+        note.title = request.data.get('title', note.title)
+        note.content = request.data.get('content', note.content)
+        note.save()
+        return Response({"message": "Note updated successfully"}, status=status.HTTP_200_OK)
+    except Note.DoesNotExist:
+        return Response({"error": "Note not found"}, status=status.HTTP_404_NOT_FOUND)

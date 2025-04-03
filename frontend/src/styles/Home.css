@@ -1,4 +1,5 @@
-/* Container for the whole page */
+
+/*Container for the whole page*/
 div {
     font-family: Arial, sans-serif;
   }
@@ -7,7 +8,17 @@ div {
   .notes-section {
     margin-bottom: 2rem;
   }
-  
+  .notes-title {
+    position: absolute;  /* Position it at the top */
+    top: 20px;  /* Distance from the top */
+    left: 50%;  /* Move it to the center */
+    transform: translateX(-50%);  /* Perfectly center it */
+    font-size: 26px;  /* Adjust font size */
+    font-weight: bold;  /* Make it bold */
+    text-align: center;
+    width: 100%;
+}
+
   .notes-section h2 {
     color: #333;
     font-size: 24px;
@@ -66,3 +77,91 @@ div {
   form input[type="submit"]:hover {
     background-color: #0056b3;
   }
+  .add-note-button {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+
+.add-note-button:hover {
+    background-color: #218838;
+}
+.logout-container {
+  display: flex;
+  justify-content: flex-end;
+  margin: 10px;
+}
+
+.add-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.add-button:hover {
+  background-color: #0056b3;
+}
+
+.note-form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.note-form input,
+.note-form textarea {
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+
+/* Add a gradient background */
+body {
+  background: linear-gradient(to right, #ffffff, #ffffff); /* Soft gray-white gradient */
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+.description {
+  
+  text-align: center;
+  font-size: 16px;
+  color: #180f0f; /* Light color for contrast */
+  margin-bottom: 20px;
+}
+.description-line {
+  margin-bottom: 10px; /* Adds space between lines */
+}
+
+.add-text {
+  color: white;
+  background-color: #28a745; /* Green */
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.edit-text {
+  color: black;
+  background-color: #ffc107; /* Yellow */
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.delete-text {
+  color: white;
+  background-color: #dc3545; /* Red */
+  padding: 2px 6px;
+  border-radius: 4px;
+}

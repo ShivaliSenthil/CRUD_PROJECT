@@ -18,15 +18,15 @@ username_field = driver.find_element(By.CLASS_NAME, "form-input")
 password_field = driver.find_elements(By.CLASS_NAME, "form-input")[1]
 
 # Use test credentials for registration
-username = "Hamsi"
-password = "123"
+username = "USER1"
+password = "12345"
 
 username_field.send_keys(username)
 password_field.send_keys(password)
 submit_button = WebDriverWait(driver, 10).until(
-        EC.element_to_be_clickable((By.CLASS_NAME, "form-button"))  # Replace with actual class name of the submit button
+        EC.element_to_be_clickable((By.CLASS_NAME, "form-button")) 
     )
 submit_button.click()
-time.sleep(5)
+time.sleep(2)
 driver.quit()
 

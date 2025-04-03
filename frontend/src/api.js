@@ -21,7 +21,7 @@ api.interceptors.request.use(
 );
 
 export default api;
-//his file configures Axios for making API requests with JWT authentication.
+//this file configures Axios for making API requests with JWT authentication.
 //Retrieves JWT access token from localStorage.
 //If a token exists, it adds Authorization: Bearer <token> to every request.
 //This ensures that protected API routes receive a valid token.
