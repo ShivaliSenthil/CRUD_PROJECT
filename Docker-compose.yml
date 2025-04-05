@@ -1,3 +1,48 @@
+# # version: '3.8'
+
+# services:
+#   backend:
+#     build: ./backend
+#     ports:
+#       - "8000:8000"
+#     volumes:
+#       - ./backend:/app
+#     environment:
+#       - DEBUG=True
+
+# #   frontend:
+# #     build: ./frontend
+# #     ports:
+# #       - "5173:5173"
+# #     depends_on:
+# #       - backend
+# #     volumes:
+# #       - ./frontend:/app
+# #     environment:
+# #       - VITE_API_URL=http://backend:8000
+# #     command: ["npm", "run", "dev", "--", "--host"]
+
+# # services:
+# #   web:
+# #     build: .
+# #     ports:
+# #      - "5173:5173" 
+# #     volumes:
+# #      - .:/app
+# #      - /app/node_modules
+# #     environment:
+# #      - CHOKIDAR_USEPOLLING=true
+
+#   web:
+#     build:
+#       context: ./frontend       # <== point to frontend directory
+#     ports:
+#       - "5173:5173"
+#     volumes:
+#       - ./frontend:/app
+#       - /app/node_modules
+#     environment:
+#       - CHOKIDAR_USEPOLLING=true
 version: '3.8'
 
 services:
@@ -10,14 +55,14 @@ services:
     environment:
       - DEBUG=True
 
-  frontend:
-    build: ./frontend
+  web:
+    build:
+      context: ./frontend       # <== point to frontend directory
     ports:
       - "5173:5173"
-    depends_on:
-      - backend
     volumes:
       - ./frontend:/app
+      - /app/node_modules
     environment:
-      - VITE_API_URL=http://backend:8000
-    command: ["npm", "run", "dev", "--", "--host"]
+        - CHOKIDAR_USEPOLLING=true
+        - VITE_API_URL=http://localhost:8000

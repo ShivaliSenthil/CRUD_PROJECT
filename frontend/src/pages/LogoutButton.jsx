@@ -44,7 +44,8 @@ const LogoutButton = () => {
             onMouseOver={(e) => e.target.style.background = "darkred"}
             onMouseOut={(e) => e.target.style.background = "red"}
         >
-            Logout
+            <div className="Logout-button">Logout</div>
+            
         </button>
     );
 };
